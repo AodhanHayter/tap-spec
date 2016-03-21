@@ -25,7 +25,7 @@ module.exports = function (spec) {
   output.push('\n');
 
   parser.on('test', function (test) {
-
+    if (test.name === '(anonymous)') return
     output.push('\n' + pad(format.underline(test.name)) + '\n\n');
   });
 
